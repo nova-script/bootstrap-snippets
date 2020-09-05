@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+	<title>Animated wavy login page</title>
+
+	<!-- META TAGS-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- FONT AWESOME FREE -->
+    <script src="https://kit.fontawesome.com/a02086f408.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        /* Wave animation */
+        .wave-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: #3586ff;
+        }
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: url('assets/img/animated-wavy-login-page/wave.png');
+            background-size: 1360px 100px;
+            width: 100vw;
+            height: 100px;
+            animation: animate 40s linear infinite;
+        }
+        .wave::before {
+            content: '';
+            width: 100%;
+            height: 100px;
+            background: url('assets/img/animated-wavy-login-page/wave.png');
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0.5;
+            animation: animate-reverse 40s linear infinite;
+        }
+        .wave::after {
+            content: '';
+            width: 100%;
+            height: 100px;
+            background: url('assets/img/animated-wavy-login-page/wave.png');
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0.7;
+            animation: animate 20s linear infinite;
+        }
+
+        @keyframes animate {0%{background-position-x: 0;} 100% {background-position-x: 1360px;}}
+        @keyframes animate-reverse {0%{background-position-x: 1360px;}100% {background-position-x: 0;}}
+
+        #login-box {
+            z-index: 5;
+            background-color: whitesmoke;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.25);
+        }
+        #login-box input, #login-box button {
+            border-radius: 40px;
+        }
+
+        .or-box {
+            position: relative;
+        }
+        .or-box h5 {
+            position: absolute;
+            top: 10px;
+            left: 45%;
+            background-color: whitesmoke;
+            padding: 0px 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <section class="wave-container">
+        <div class="container">
+            <div class="row vh-100 justify-content-center align-items-center px-2">
+                <div class="col-12 col-md-5 col-lg-4 py-4 text-center" id="login-box">
+                    <h2>
+                        New here?
+                        <br>
+                        <a href="">Sign Up!</a>
+                    </h2>
+
+                    <div class="or-box py-2 px-5">
+                        <hr>
+                        <h5 class="text-muted">or</h5 class="text-muted">
+                    </div>
+
+                    <h2 class="mb-4">Welcome back!</h2>
+
+                    <form action="" class="px-3">
+                        <input type="text" class="form-control form-control-lg mb-2" placeholder="Email adress">
+                        <input type="password" class="form-control form-control-lg mb-2" placeholder="Password">
+
+                        <div class="form-check text-left ml-3 py-2">
+                            <input type="checkbox" class="form-check-input" id="rememberMeCheck">
+                            <label class="form-check-label" for="rememberMeCheck">Remember me</label>
+                          </div>
+
+                        <button class="btn btn-lg btn-primary w-100 mb-2">
+                            <small><strong>SIGN IN</strong></small>
+                        </button>
+
+                        <small><a href="">Forgot your password?</a></small>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="wave">
+        </div>
+    </section>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
